@@ -124,7 +124,7 @@ env
 .DS_Store
 local_settings.py
 _local_settings.py
-static/
+# static/
 
 # Add again for course purpose
 !db.sqlite3
