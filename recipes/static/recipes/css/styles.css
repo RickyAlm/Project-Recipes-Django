@@ -246,23 +246,35 @@
       filter: brightness(2);
     }
 
-  .main-content-detail .recipe-list-item {
-    max-width: 84rem;
-    margin: 0 auto;
-  }
+    .main-content-detail .recipe-list-item {
+      max-width: 84rem;
+      margin: 0 auto;
+    }
 
-  .main-content-detail .recipe-list-item:hover {
-    transform: scale(1);
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
-  }
+    .main-content-detail .recipe-list-item:hover {
+      transform: scale(1);
+      box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
     /* END RECIPE CARD */
 
-  /* SINGLE CARD */
-  .preparation-steps {
-    padding: var(--spacing-gutter-medium);
-  }
+    /* SINGLE CARD */
+    .preparation-steps {
+      padding: var(--spacing-gutter-medium);
+    }
 
-  /* END SINGLE CARD */
+    .main-content-detail ul,
+    .main-content-detail ol {
+      margin-left: 2.8rem;
+      padding: 0.8rem;
+    }
+
+    .main-content-detail ul li,
+    .main-content-detail ol li {
+      padding: 0.45rem;
+    }
+
+    /* END SINGLE CARD */
 
     /* FOOTER */
     .main-footer {
