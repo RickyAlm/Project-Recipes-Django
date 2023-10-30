@@ -9,13 +9,13 @@ class RecipeModelTest(RecipeTestBase):
         self.recipe = self.make_recipe()
         return super().setUp()
 
-    def make_recipe_no_defaults(self):
+    def make_recipe_no_defaults(self, slug_content='recipe-slug-02'):
         recipe = Recipe(
             category=self.make_category(name='Test Default Category'),
             author=self.make_author(username='newuser'),
             title='Recipe Title',
             description='Recipe Description',
-            slug='recipe-slug',
+            slug=slug_content,
             preparation_time=10,
             preparation_time_unit='Minutes',
             servings=5,
@@ -25,6 +25,13 @@ class RecipeModelTest(RecipeTestBase):
         recipe.full_clean()
         recipe.save()
         return recipe
+
+    def test_recipe_slug_name_is_not_repeated(self):
+        # Receives the slug from the make_recipe method.
+        needed = self.recipe.slug
+
+        with self.assertRaises(ValidationError, msg='The slugs are repeating'):
+            self.make_recipe_no_defaults(needed)
 
     @parameterized.expand([
         ('title', 65),
