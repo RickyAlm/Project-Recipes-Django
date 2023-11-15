@@ -50,13 +50,18 @@
 
     html {
       font-size: 62.5%;
+      height: 100%;
+      min-height: 100%;
     }
 
     body {
       font-size: 1.6rem;
       font-family: var(--font-primary);
       background: var(--color-gray-1);
-      color: var(--color-dark-text)
+      color: var(--color-dark-text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%
     }
 
     h1,
@@ -284,6 +289,7 @@
       background: var(--color-primary-dark);
       color: var(--color-white);
       padding: var(--spacing-gutter-large);
+      margin-top: auto;
     }
 
     .main-footer a {
