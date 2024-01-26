@@ -20,7 +20,9 @@ class RecipeDetailViewTest(RecipeTestBase):
         needed_title = 'This is a detail page - It load one recipe'
 
         # Need a recipe for this test
-        self.make_recipe(title=needed_title)
+        self.make_recipe(
+            title=needed_title, category_data=self.make_category()
+        )
 
         response = self.client.get(
             reverse('recipes:recipe', kwargs={'id': 1})
@@ -33,7 +35,9 @@ class RecipeDetailViewTest(RecipeTestBase):
     def test_recipe_detail_template_dont_load_recipe_not_published(self):
         """Test recipe if is_published is False and dont show!"""
         # Need a recipe for this test
-        recipe = self.make_recipe(is_published=False)
+        recipe = self.make_recipe(
+            is_published=False, category_data=self.make_category()
+        )
 
         response = self.client.get(
             reverse('recipes:recipe', kwargs={'id': recipe.id})  # type: ignore

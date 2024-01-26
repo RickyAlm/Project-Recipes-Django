@@ -6,7 +6,7 @@ from .test_recipe_base import Recipe, RecipeTestBase
 
 class RecipeModelTest(RecipeTestBase):
     def setUp(self) -> None:
-        self.recipe = self.make_recipe()
+        self.recipe = self.make_recipe(category_data=self.make_category())
         return super().setUp()
 
     def make_recipe_no_defaults(self, slug_content='recipe-slug-02'):
