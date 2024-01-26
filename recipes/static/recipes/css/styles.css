@@ -341,3 +341,10 @@ h6 {
 .m-y {
   margin: var(--spacing-gutter-medium) 0;
 }
+
+/* MEDIA */
+@media (max-width: 600px) {
+  .main-content-list {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
